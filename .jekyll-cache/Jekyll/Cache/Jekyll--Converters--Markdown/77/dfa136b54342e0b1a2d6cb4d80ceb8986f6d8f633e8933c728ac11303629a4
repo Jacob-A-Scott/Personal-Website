@@ -1,0 +1,32 @@
+I"
+<p>Hi, I’m Jacob - Data Analyst/Scientist by trade and learner by necessity, (and choice)! I’ve been in the field for about 4 years and presently, I work for a premarket startup in the medical device industry. I am halfway through my master’s degree in data science, chipping away at that part-time. I’m endlessly curious about the world around me, which as it turns out, can be a useful skill in my line of work!</p>
+
+<p>Beyond an obvious interest in data science and tech in general, I have a deep-seated fascination with history. It would surprise me if the subject doesn’t manage to squeeze its way into my writing here at some point. I also enjoy music and am a bit of an amateur audiophile. I love reading (history and horror!) and treasure spending time with my wife, Jessica, and my dog and cat!</p>
+
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="/images/stanley.jpg" title="Stanley" />
+    <img src="/images/marnie.jpg" title="Marnie" />
+  </div>
+  <em>Mandatory pet pics.</em>
+</div>
+
+<p>This blog/site/whatever you want to call it serves a few purposes:</p>
+
+<ol>
+  <li>It serves as a way for me to share more about the subject, which I find fascinating as it intersects with many other disciplines. Writing about it will help me process and incorporate the information myself.</li>
+  <li>I want to share some of the work that I do for my graduate courses. It takes time and effort I have to carve out of my personal and professional life, and it makes sense to get some mileage out of it!</li>
+  <li>I’ve been itching to write more. Writing is a means to an end in my day-to-day, and that doesn’t provide much of an opportunity to improve the way I communicate. I’m hoping this flexes that creative expression muscle and helps me to convey complex material a little better.</li>
+</ol>
+
+<p>This site is not intended to be a demonstration of my expertise, shameless self-promotion, or fluff for a CV. I intend for it to reflect me ‘showing my work’, or at least to represent a breadcrumb trail of parts of my own learning journey.</p>
+
+<blockquote>
+  <p>“What I cannot create, I do not understand.”</p>
+
+  <p><cite>Richard Feynman</cite></p>
+</blockquote>
+
+<p><strong>P.S.</strong><br />
+For those that are curious, this website is a static site built using Jekyll on Ruby. The site is based on <a href="https://jekyllthemes.io/developers/artem-sheludko">Artem Sheludko’s</a> theme, <em>Joseph</em>. I’ve made some minor tweaks for my own needs and all content is managed using markdown and HTML templates!</p>
+:ET
