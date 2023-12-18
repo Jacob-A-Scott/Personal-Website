@@ -1,8 +1,9 @@
-# Joseph is a super minimal content focus theme for Jekyll
-
-Joseph is a super minimal content focus theme for Jekyll. This theme was created with a focus on typography and a reading experience and has a light and dark mode for easy reading. This theme is perfect for the personal blog of a programmer, designer, blogger, or any creative person.
+# My Static Portfolio Blog Built Using Jekyll
+This site was built using Artem Sheludko's theme, Joseph, for Jekyll. I have made tweaks to suit my own purposes and all written content is my own. See below for a demo and deployment instructions for Artem's theme:
 
 * * *
+
+## Joseph Theme by Artem Sheludko
 
 ### Demo
 
