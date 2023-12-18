@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A Post From My Old Site
-description: \"Wrangling and Regression Modeling of Scraped Zillow Listings\". An example from my early learning days back in 2020, that was hosted on my deprecated site. Shows an end-to-end project with scraping web data, collating and processing it, and analyzing it for rough prediction.
+description: '"Wrangling and Regression Modeling of Scraped Zillow Listings"'. An example from my early learning days back in 2020, that was hosted on my deprecated site. Shows an end-to-end project with scraping web data, collating and processing it, and analyzing it for rough prediction.
 date: 2020-05-22
 image: "/images/Zillow/house.jpg"
 tags: [scraping, machine learning, regression]
