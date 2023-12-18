@@ -11,7 +11,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 author:
   name: Jacob Scott
   bio: I'm an analytics and machine learning professional, who's found his niche in the medtech industry.
-  avatar: '/images/me.png'
+  avatar: '/images/me_clipped.png'
 
 social:
 - {icon: "ion-logo-linkedin", label: LinkedIn, link: "https://www.linkedin.com/in/jacob-scott-171264160/"}
@@ -26,7 +26,7 @@ social:
 hero:
   hero__title: Hey, I'm Jacob!<br>DS & ML Professional.
   hero__description: I'm an analytics and data science practitioner with a soft spot for visual design. Enthusiastic about health, technology, and solving tricky problems.
-  hero__image: '/images/me.png'
+  hero__image: '/images/me_clipped.png'
 
 
 #-------------------------------
