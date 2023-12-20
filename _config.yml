@@ -43,7 +43,7 @@ mailchimp__button__text: # Add your button text
 contact:
   email: jacobscott8910@gmail.com # Add your email for contact form
   description: Reach out for info or to collaborate! I'm not looking for a job at the moment, but I'm always happy to connect.
-  formspree: https://formspree.io/f/xqkvovqa
+  # formspree: https://formspree.io/f/xqkvovqa
 # NOTE
 # Joseph comes with a built-in contact form, that you can use with Formspree service to handle up to 50 submissions per month for free. You could also easily switch to another contact form service if you want.
 
