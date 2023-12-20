@@ -167,6 +167,14 @@
         background: #3ea1ec;
       }
     }
+    &.share__linkedin {
+      color: var(--white);
+      background: #0072b1;
+
+      &:hover {
+        background: #00669d;
+      }
+    }
   }
 }
 
