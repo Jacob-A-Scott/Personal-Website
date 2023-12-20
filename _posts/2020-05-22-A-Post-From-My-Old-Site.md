@@ -39,7 +39,6 @@ sns.set_style("whitegrid") # Set plot plot background style
 
 Now, let's start working with some data. ScrapeHero's Zillow scraper provides a simple CSV output for each zip code. Let's read all of these into Pandas and take a look at one of them. I should note that the biggest caveat to using this script is that it is limited to one search page, so the maximum number of listings that it can pull for each zip code is about forty. This limited number of listings for the four major zip codes in Bloomington is okay for us, because it serves as a (mostly) random sample of homes for a quick analysis. It's okay for a small-scale project like this one, but if you're trying to scale up to get more accurate insight into your local housing market, a scraping service (or pre-collected dataset) may be required.
 
-
 {% highlight python %}
 props_47401 = pd.read_csv("properties-47401.csv")
 props_47403 = pd.read_csv("properties-47403.csv")
@@ -47,13 +46,9 @@ props_47404 = pd.read_csv("properties-47404.csv")
 props_47408 = pd.read_csv("properties-47408.csv")
 {% endhighlight %}
 
-
 {% highlight python %}
 props_47401.head()
 {% endhighlight %}
-
-
-
 
 <div>
 <style scoped>
@@ -149,26 +144,18 @@ props_47401.head()
 </table>
 </div>
 
-
-
 We can see that we're going to have to do some data wrangling in order to work with these files. We have some NaN values for missing data, home types that we may not want to include in our analysis, strings in numeric fields, as well as a compound field (facts and features) that we'll want to break up.
 
 ## Merging Dataframes
 
 Let's merge these dataframes together!
 
-
 {% highlight python %}
 df = props_47401.append([props_47403, props_47404, props_47408])
 {% endhighlight %}
 
-
 {% highlight python %}
 df.count()
-{% endhighlight %}
-
-
-
 
     title                   160
     address                   0
@@ -180,8 +167,7 @@ df.count()
     real estate provider    139
     url                     160
     dtype: int64
-
-
+{% endhighlight %}
 
 Easy-peasy. We can see from the count method above that we have 160 listings, but some fields have null values, which may be an issue. We're really only going to need the price field and the facts and features field for our analysis, so let's work on dropping the NaN values for price. The facts and features field has the full count of 160.
 
@@ -189,21 +175,15 @@ Easy-peasy. We can see from the count method above that we have 160 listings, bu
 
 Here we're filtering the price field for any instance of a NaN value and dropping that row from the dataset. We can't create a model from incomplete training data.
 
-
 {% highlight python %}
 df = df.dropna(subset=['price'])
 {% endhighlight %}
 
 We're also going to drop any rows that don't include 'House' in the title field. This field includes other property types such as multi-family homes and empty lots, which are not relevant to our analysis.
 
-
 {% highlight python %}
 props = df[df["title"].str.contains('House')]
 props.count()
-{% endhighlight %}
-
-
-
 
     title                   76
     address                  0
@@ -215,8 +195,7 @@ props.count()
     real estate provider    76
     url                     76
     dtype: int64
-
-
+{% endhighlight %}
 
 We can see that this severely cuts our dataset down. However, a sample size of 76 is still fine and should give us reliable results given the assumptions of the methods we'll use.
 
@@ -226,30 +205,18 @@ Our target field is price, so we need to make sure that the data in it is usable
 
 We'll do some regex magic to drop the dollar sign from all the price values. In the same line, we're converting the type to float, so that we can apply mathematical functions to the field.
 
-
 {% highlight python %}
 prices = props['price'].replace( '[\$,)]', '', regex=True ).astype(float)
 {% endhighlight %}
 
-
 {% highlight python %}
 prices.median()
-{% endhighlight %}
-
-
-
 
     289450.0
-
-
-
+{% endhighlight %}
 
 {% highlight python %}
 prices.describe()
-{% endhighlight %}
-
-
-
 
     count        76.000000
     mean     327928.947368
@@ -260,8 +227,7 @@ prices.describe()
     75%      401725.000000
     max      995000.000000
     Name: price, dtype: float64
-
-
+{% endhighlight %}
 
 We have some of our first statistics! The describe method above shows us some of the characteristics of the price data. We have a sample median of \$289,450, which is much higher than the state average of \$158,690 (Zillow), but that's Bloomington. This median is lower than the mean, which suggests that the distribution of prices is positively skewed or that we have some outliers pushing the average up. We'll find out shortly.
 
@@ -269,28 +235,21 @@ We have some of our first statistics! The describe method above shows us some of
 
 Let's take a closer look at the distribution of our listing prices. We can see from the histogram/density plot below that the distribution is near-normal with a positive skew. There is a dense clustering of listing prices in the low $200k range. It's important to note that we have some outliers that may impact our analysis.
 
-
 {% highlight python %}
 plt.figure(figsize=(8,5))
 ax = sns.distplot(prices, bins=50, rug=True)
 {% endhighlight %}
 
-
 <img src="{{ site.url }}{{ site.baseurl }}/images/zillow_hist.png" alt="density plot">
 
-
 In the box plot below, we can see some of the outliers I mentioned. There is a value at or near \$800,000 and one near \$1,000,000 that are well above the rest of the distribution. At the bottom end of the distribution there is also a value near \$30,000 that may affect the analysis results as well. It is oftentimes not a good idea to remove outlier just because they represent extreme values, but we'll have to make a decision about them later.
-
 
 {% highlight python %}
 plt.figure(figsize=(8,3))
 ax = sns.boxplot(prices, width=0.66)
 {% endhighlight %}
 
-
 <img src="{{ site.url }}{{ site.baseurl }}/images/zillow_box1.png" alt="box plot">
-
-
 
 ## Splitting Out Attributes
 
@@ -298,25 +257,19 @@ Now, we need to obtain our feature fields, which are going to be number of bedro
 
 We do that below using the pd.str.split() method to break the values up by comma. Luckily, all the values in this field are consistent, so we don't have to do much. We also concatenate this new dataframe of the three features with the price column, to create a new dataframe, props.
 
-
 {% highlight python %}
 props = pd.concat([props['price'], props['facts and features'].str.split(',', expand=True)], axis=1)
 {% endhighlight %}
 
 Here, we simply rename the columns to reflect the values.
 
-
 {% highlight python %}
 props.columns = ['price', 'beds', 'baths', 'sqft']
 {% endhighlight %}
 
-
 {% highlight python %}
 props.head()
 {% endhighlight %}
-
-
-
 
 <div>
 <style scoped>
@@ -382,14 +335,11 @@ props.head()
 </table>
 </div>
 
-
-
 Looks good!
 
 ## Type Conversion
 
 One of the final steps we need to take before we can analyze our data is to convert all the fields to proper numeric types. Since our target, price, and our three feature fields are all quantitative, we'll use floats. We do have to work some more regex magic to do some tricky character filtering.
-
 
 {% highlight python %}
 props['price'] = props['price'].str.replace(r'\D', '').astype(float) # removes all non-numeric characters
@@ -398,13 +348,9 @@ props['baths'] = props['baths'].str.replace(r'[a-z]+', '').astype(float)
 props['sqft'] = props['sqft'].str.replace(r'[a-z]+', '').astype(float)
 {% endhighlight %}
 
-
 {% highlight python %}
 props.head()
 {% endhighlight %}
-
-
-
 
 <div>
 <style scoped>
@@ -470,8 +416,6 @@ props.head()
 </table>
 </div>
 
-
-
 We're finally done with cleaning and (almost) ready to move on to some analysis! We need to make a decision about those outliers first.
 
 ## Resolving Outliers
@@ -480,21 +424,17 @@ The three outliers that we mentioned above might give us some trouble. Like I st
 
 The other two are trickier to make a decision on, but at \$800,000+, I think it's safe to say that they are not worth considering for a representation of the homes we're looking for in Bloomington. One could run the regression model with or without them and results may vary. Below, we use the df.loc() method to extract all the rows with price values within a range to remove the outliers and show the distribution with a box plot.
 
-
 {% highlight python %}
 props = props.loc[(props['price'] > 100000) & (props['price'] < 700000)]
 plt.figure(figsize=(8,3))
 ax = sns.boxplot(props['price'], width=0.66)
 {% endhighlight %}
 
-
 <img src="{{ site.url }}{{ site.baseurl }}/images/zillow_box2.png" alt="box plot">
-
 
 # Analysis
 
 We're ready to start looking at how our other attributes might be affecting the listing price for each home. We want to examine any relationship between two variables to see if there is a correlation. For example, if square footage increases, does price increase? We can visualize these relationships be creating a scatter plot for two variables at a time. Let's create a scatter matrix so that we can do this for all possible relationships. It will also show us the frequencies of values for each field.
-
 
 {% highlight python %}
 sns.set_style("white")
@@ -502,9 +442,7 @@ ax = pd.plotting.scatter_matrix(props, alpha=0.66, figsize=(10, 10))
 plt.show()
 {% endhighlight %}
 
-
 <img src="{{ site.url }}{{ site.baseurl }}/images/zillow_scattermatrix.png" alt="scatter plot matrix">
-
 
 That's a lot to look at! But we can see that the relationships appear to be linear. This makes sense, as you would expect a house with low square footage to have fewer bedrooms, fewer bathrooms, and a generally lower price than a larger home with more amenities. Linearity is also an important assumption for the regression analysis that we'll be performing on the data. However, we need to do more than assume linearity from scatter plots.
 
@@ -512,13 +450,9 @@ That's a lot to look at! But we can see that the relationships appear to be line
 
 Let's try to quantify these relationships. The best way that we can do this, since all the fields are numeric and nominal, is to use Pearson's correlation coefficient. We do that below with df.corr().
 
-
 {% highlight python %}
 props.corr(method='pearson')
 {% endhighlight %}
-
-
-
 
 <div>
 <style scoped>
@@ -577,14 +511,11 @@ props.corr(method='pearson')
 </table>
 </div>
 
-
-
 We can see above that all the relationships between two variables are positive, with some very strong correlation in some cases. A stronger linear relationship is quantified with a number closer to 1, where no relationship is defined as 0. For example, the strongest relationship here is between square footage and price, with a value of 0.828. The lowest is between bedrooms and price, which isn't surprising, as bedrooms generally follow square footage and bathrooms in pricing guidelines for a home. We're all set to run our regression to see if we can make predictions from our data.
 
 ## Multiple Linear Regression
 
 Since we have one target field, price, and three attribute fields, we're going to be using a multiple linear regression model to incorporate all three feature fields in predicting a price value. We'll define our x (features) and y (target) variables below.
-
 
 {% highlight python %}
 y = props['price'].values # target - must reshape series object
@@ -593,40 +524,30 @@ x = props[['beds', 'baths', 'sqft']] # features
 
 Next, we're going to split out our training and testing data. This is optional depending on how you want to use your model. I'm not going to scrape new data or generate more than one other listing (besides my home) to test the model against. So I'm taking the dataset and splitting it into 80% training data to train the regression model on, and 20% testing data to test its accuracy in predicting listing prices.
 
-
 {% highlight python %}
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=0)
 {% endhighlight %}
 
 Alright, with that out of the way, it's time to fit the regression model to the data. Below we are setting the 'regressor' variable as an instance of the LinearRegression class from Scikit-Learn. This allows us to call the .fit() method to fit the model to our variables.
 
-
 {% highlight python %}
 regressor = LinearRegression()
 regressor.fit(x_train, y_train)
-{% endhighlight %}
-
-
-
 
     LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, normalize=False)
-
-
+{% endhighlight %}
 
 The output above tells us that it worked with no problems! Now we can look at the results of the regression! We'll first view the intercept and coefficients for the regression lines below. Since this is a multiple regression with three independent variables, we're not going to try to visualize the model (because that would require four dimensions).
-
 
 {% highlight python %}
 print(regressor.intercept_)
 print(regressor.coef_)
-{% endhighlight %}
 
     13161.326762240089
     [ 8896.63089462 54118.2658778     56.54988965]
-    
+{% endhighlight %}
 
 These numbers would give us what we need to plot individual regression lines or planes if we decided to focus on one or two independent variables, respectively. But what is important is running the test values through the model and seeing how it performed. We'll test that data now.
-
 
 {% highlight python %}
 y_pred = regressor.predict(x_test)
@@ -634,14 +555,10 @@ y_pred = regressor.predict(x_test)
 
 Success! Let's look at the results of the prediction against the actual data. This will give us an indication of how our model is performing. Below, we create a new dataframe and include the actual listing prices of the test data and flatten the model results into the second column.
 
-
 {% highlight python %}
 predictions = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred.flatten()})
 predictions
 {% endhighlight %}
-
-
-
 
 <div>
 <style scoped>
@@ -745,8 +662,6 @@ predictions
 </table>
 </div>
 
-
-
 It looks the model worked decently!<br>
 <br>There are some predictions that are very close: row 8 at \$235k actual \$232k predicted
 <br>as well as some that are pretty far off: row 11 at \$240k actual and \$178k predicted
@@ -757,7 +672,6 @@ I would guess that a lot of this variation is informative of housing data in gen
 
 We can visualize the house price predictions against their actual values by plotting them side-by-side on a bar graph. We'll take a random sample of ten and plot them using matplotlib.
 
-
 {% highlight python %}
 perf = predictions.sample(10)
 perf.plot(kind='bar',figsize=(16,10))
@@ -766,22 +680,19 @@ plt.grid(which='minor', linestyle=':', linewidth='0.5', color='black')
 plt.show()
 {% endhighlight %}
 
-
 <img src="{{ site.url }}{{ site.baseurl }}/images/zillow_bar.png" alt="bar plot">
-
 
 Not perfect by any means, but not terrible! There are many predictions that are pretty close. Number 8 stands out as almost identical, but we saw that in the table above. 9 stands out as the worst prediction, at ~\$164,000 off! That's a huge error. There must be something unique going on with that house. It could be a remodel or it has something to offer that drives up the value that isn't included in our three attributes. This emphasizes that our data if far from ideal, and we could use some combination of more features and more samples.
 
 To get some more indication of the performance of the model, let's get some important regression metrics below.
 
-
 {% highlight python %}
 print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))   
 print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
-{% endhighlight %}
 
     Mean Absolute Error: 44677.85621856667
     Root Mean Squared Error: 66516.42401199984
+{% endhighlight %}
 
 Generally mean squared error is useful, but we'll pay attention to two other metrics for this model since we can use root mean squared error in its place. The root mean squared error (RMSE) is widely used for regression metrics because it gives an indication of how errors are affecting the model. With RMSE, errors are first squared before being averaged, so this metric points out models with large errors between the actual and predicted values.
 
@@ -793,19 +704,17 @@ The RSME score of 66516 tells us that due to some large errors, the model is bei
 
 Limitations of our data aside, I'd like to know how the model predicts my home's value. We found it listed on Zillow for \$186,000 with three bedrooms, one and half bathrooms, and it's 1,120 square feet. Let's make these values into an array and plug them into the model's .predict() method to see what it predicts.
 
-
 {% highlight python %}
 new_house = np.array([3.0, 1.5, 1120])
 new_house = new_house.reshape(1,-1)
 {% endhighlight %}
 
-
 {% highlight python %}
 print('Predicted Home Price: \n', regressor.predict(new_house))
-{% endhighlight %}
 
     Predicted Home Price: 
-     [184364.49466694]
+    [184364.49466694]
+{% endhighlight %}
 
 That's very close! The predicted value of \$184,364 is only about 0.9\% lower than the actual listing price. While this individual result might be a fluke result of error variation, it means that the model is a step in the right direction. More data and more data attributes would likely provide a model with much higher accuracy.
 
