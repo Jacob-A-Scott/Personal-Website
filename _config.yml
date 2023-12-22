@@ -24,7 +24,7 @@ social:
 #-------------------------------
 # Hero Settings
 hero:
-  hero__title: Hey, I'm Jacob!<br>DS & ML Professional.
+  hero__title: Hey, I'm Jacob!<br>Data Science Professional.
   hero__description: I'm an analytics and data science practitioner with a soft spot for visual design. Enthusiastic about health, technology, and solving tricky problems.
   hero__image: '/images/me_clipped.png'
 

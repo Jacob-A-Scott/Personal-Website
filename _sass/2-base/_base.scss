@@ -67,9 +67,9 @@ blockquote {
   position: relative;
   padding: 68px 0;
   margin: 68px -130px;
-  font-size: 44px;
+  font-size: 40px;
   line-height: 1;
-  font-weight: 800;
+  font-weight: 700;
   font-style: italic;
   text-align: center;
   color: var(--heading-font-color);
@@ -99,8 +99,8 @@ blockquote {
   cite {
     display: inline-block;
     margin-top: 8px;
-    font-size: 14px;
-    font-weight: 900;
+    font-size: 16px;
+    font-weight: 700;
     font-style: italic;
     color: var(--heading-font-color);
     &::after,

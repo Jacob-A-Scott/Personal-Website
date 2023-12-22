@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://localhost:4000/A-Post-From-My-Old-Site</loc>
+<lastmod>2020-05-22T00:00:00-04:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/Introduction</loc>
 <lastmod>2023-12-17T06:34:00-05:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/AI-vs-Machine-Learning</loc>
+<lastmod>2023-12-22T06:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/about/</loc>
@@ -14,6 +22,24 @@
 <loc>http://localhost:4000/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/tag/scraping</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tag/machine-learning</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tag/regression</loc>
+</url>
+<url>
 <loc>http://localhost:4000/tag/meta</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tag/ai</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tag/machine-learning</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tag/history</loc>
 </url>
 </urlset>
