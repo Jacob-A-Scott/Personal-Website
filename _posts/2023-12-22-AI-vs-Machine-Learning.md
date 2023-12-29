@@ -17,7 +17,7 @@ It's only quite recently that Artificial Intelligence (AI) really left the realm
 
 ## So What Is AI?
 ### A Bit of History
-When you hear the term artificial intelligence, it probably conjures up images of KITT from _Knight Rider_ or of a highly intelligent computer locking you out of your spacecraft to leave you to die in the cold vacuum of space. _Fortunately_, while sci-fi tropes shape our preconceived notions of AI, it in fact has a much more grounded history in computer science, with the term first being coined by John McCarthy of MIT \[1\]. McCarthy described the nascent field as "the science and engineering of making intelligent machines" \[2\]. AI, in its essence, is the concept of programming machines to behave like humans, accomplishing complex tasks in clever ways.
+When you hear the term artificial intelligence, it probably conjures up images of KITT from _Knight Rider_ or of a highly intelligent computer locking you out of your spacecraft to leave you to die in the cold vacuum of space. _Fortunately_, while sci-fi tropes shape our preconceived notions of AI, it in fact has a much more grounded history in computer science, with the term first being coined by John McCarthy of MIT.<sup>\[1\]</sup> McCarthy described the nascent field as "the science and engineering of making intelligent machines".<sup>\[2\]</sup> AI, in its essence, is the concept of programming machines to behave like humans, accomplishing complex tasks in clever ways.
 ### An Umbrella Term Today
 While artificial intelligence still encompasses John McCarthy's definition, the field has been shaped and pursued due to practicality and interdisciplinary influences. McCarthy's original vision of artificial _general_ intelligence (AGI) is still a far-off and rather academic idea that despite what AI chatbot companies may say, does not exist today.
 
@@ -44,7 +44,7 @@ Machine learning is a data-driven way to pursue artificial intelligence, althoug
 
 Even the most complex AI tools we see today, and I'm specifically talking about the large language models that are a sensation at the moment (ChatGPT, Bard, Gemini, etc.) are all very complex machine learning models. Through complicated natural language processing (NLP; subset of ML for linguistics), they are able to simulate intelligence by being fed massive amounts of textual training data. There is debate on whether these models truly "understand" language or that they are merely stochastic parrots, but that debate typically devolves into a debate on what "understand" means. And that is a digression far beyond what I want to get into!
 
-> "It's difficult to be rigorous about whether a machine really 'knows', 'thinks', etc., because we're hard put to define these things. We understand human mental processes only slightly better than a fish understands swimming." \[3\]
+> "It's difficult to be rigorous about whether a machine really 'knows', 'thinks', etc., because we're hard put to define these things. We understand human mental processes only slightly better than a fish understands swimming." <sup>\[3\]</sup>
 >
 ><cite>John McCarthy</cite>
 
