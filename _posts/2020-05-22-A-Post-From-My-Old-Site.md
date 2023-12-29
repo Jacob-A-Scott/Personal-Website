@@ -1,11 +1,13 @@
 ---
 layout: post
-title: A Post From My Old Site
+title: "A Post From My Old Site"
 description: '"Wrangling and Regression Modeling of Scraped Zillow Listings". An example from my early learning days back in 2020, that was hosted on my deprecated site. Shows an end-to-end project with scraping web data, collating and processing it, and analyzing it for rough prediction.'
 date: 2020-05-22
-image: "images/home.jpg"
-tags: [scraping, machine learning, regression]
-
+image: "/images/home.jpg"
+tags:
+  - "scraping"
+  - "ml"
+  - "regression"
 ---
 ## 2023 Update:
 This is a post that I originally published on my since-deprecated personal site in 2020. It is from about 3.5 years ago at the time of this update, before the bulk of my graduate studies and work experience. It really takes some time on the anvil to internalize and understand the _important_ underpinning disciplines in data science. And even then, you'll never be done! The more you know, the less you know, you know?
@@ -240,7 +242,7 @@ plt.figure(figsize=(8,5))
 ax = sns.distplot(prices, bins=50, rug=True)
 {% endhighlight %}
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/zillow_hist.png" alt="density plot">
+![Rest]({{ site.baseurl }}/images/zillow_hist.png)
 
 In the box plot below, we can see some of the outliers I mentioned. There is a value at or near \$800,000 and one near \$1,000,000 that are well above the rest of the distribution. At the bottom end of the distribution there is also a value near \$30,000 that may affect the analysis results as well. It is oftentimes not a good idea to remove outlier just because they represent extreme values, but we'll have to make a decision about them later.
 
@@ -249,7 +251,7 @@ plt.figure(figsize=(8,3))
 ax = sns.boxplot(prices, width=0.66)
 {% endhighlight %}
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/zillow_box1.png" alt="box plot">
+![Rest]({{ site.baseurl }}/images/zillow_box1.png)
 
 ## Splitting Out Attributes
 
@@ -430,7 +432,7 @@ plt.figure(figsize=(8,3))
 ax = sns.boxplot(props['price'], width=0.66)
 {% endhighlight %}
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/zillow_box2.png" alt="box plot">
+![Rest]({{ site.baseurl }}/images/zillow_box2.png)
 
 # Analysis
 
@@ -442,7 +444,7 @@ ax = pd.plotting.scatter_matrix(props, alpha=0.66, figsize=(10, 10))
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/zillow_scattermatrix.png" alt="scatter plot matrix">
+![Rest]({{ site.baseurl }}/images/zillow_scattermatrix.png)
 
 That's a lot to look at! But we can see that the relationships appear to be linear. This makes sense, as you would expect a house with low square footage to have fewer bedrooms, fewer bathrooms, and a generally lower price than a larger home with more amenities. Linearity is also an important assumption for the regression analysis that we'll be performing on the data. However, we need to do more than assume linearity from scatter plots.
 
@@ -680,7 +682,7 @@ plt.grid(which='minor', linestyle=':', linewidth='0.5', color='black')
 plt.show()
 {% endhighlight %}
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/zillow_bar.png" alt="bar plot">
+![Rest]({{ site.baseurl }}/images/zillow_bar.png)
 
 Not perfect by any means, but not terrible! There are many predictions that are pretty close. Number 8 stands out as almost identical, but we saw that in the table above. 9 stands out as the worst prediction, at ~\$164,000 off! That's a huge error. There must be something unique going on with that house. It could be a remodel or it has something to offer that drives up the value that isn't included in our three attributes. This emphasizes that our data if far from ideal, and we could use some combination of more features and more samples.
 

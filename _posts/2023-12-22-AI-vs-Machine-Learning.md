@@ -1,10 +1,13 @@
 ---
 layout: post
 title: "AI vs. Machine Learning - What's the Difference?"
-description: A brief writeup on the overlap and distinction between two of the buzziest topics of our time.
-date:   2023-12-22 16:00:00 +0500
-image:  'images/ai-vs-ml.jpg'
-tags:   [ai, machine learning, history]
+description: "A brief writeup on the overlap and distinction between two of the buzziest topics of our time."
+date:   2023-12-22
+image:  '/images/ai-vs-ml.jpg'
+tags:
+  - "ai"
+  - "ml"
+  - "history"
 ---
 
 ## Data Science Is a Confusing Word Soup

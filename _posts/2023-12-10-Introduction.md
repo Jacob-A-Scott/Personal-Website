@@ -1,10 +1,11 @@
 ---
 layout: post
-title:  Introduction
-description: Introduction to this site and my intentions for it!
-date:   2023-12-17 16:34:00 +0500
-image:  'images/intro.jpg'
-tags:   [meta]
+title:  "Introduction"
+description: "Introduction to this site and my intentions for it!"
+date:   2023-12-17 
+image:  "/images/intro.jpg"
+tags:
+  - "meta"
 ---
 # Gotta Start Somewhere
 Hello and and welcome to my site! My plan is for all of this to serve as a kind of blog/portfolio/brain-dump that I hope to stick with. I discuss my intentions a bit in my [About]({{site.baseurl}}/about) section, but it boils down to wanting to share some of the work that I do between my _actual_ work, graduate courses, and personal reading and research. Austin Kleon says in his book, _Show Your Work!_ that "if your work isn’t online, it doesn’t exist". 

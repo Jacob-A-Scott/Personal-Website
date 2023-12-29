@@ -6,11 +6,11 @@
 </url>
 <url>
 <loc>http://localhost:4000/Introduction</loc>
-<lastmod>2023-12-17T06:34:00-05:00</lastmod>
+<lastmod>2023-12-17T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/AI-vs-Machine-Learning</loc>
-<lastmod>2023-12-22T06:00:00-05:00</lastmod>
+<lastmod>2023-12-22T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/about/</loc>
@@ -25,7 +25,7 @@
 <loc>http://localhost:4000/tag/scraping</loc>
 </url>
 <url>
-<loc>http://localhost:4000/tag/machine-learning</loc>
+<loc>http://localhost:4000/tag/ml</loc>
 </url>
 <url>
 <loc>http://localhost:4000/tag/regression</loc>
@@ -35,9 +35,6 @@
 </url>
 <url>
 <loc>http://localhost:4000/tag/ai</loc>
-</url>
-<url>
-<loc>http://localhost:4000/tag/machine-learning</loc>
 </url>
 <url>
 <loc>http://localhost:4000/tag/history</loc>
