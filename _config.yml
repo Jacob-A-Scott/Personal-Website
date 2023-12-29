@@ -10,7 +10,7 @@ url: "https://jacobscott.io" # the base hostname & protocol for your site, e.g. 
 # Author Settings
 author:
   name: Jacob Scott
-  bio: I'm an analytics and machine learning professional, who's found his niche in the medtech industry.
+  bio: I'm a data science professional who's found his niche in the medtech industry.
   avatar: '/images/me_clipped.png'
 
 social:

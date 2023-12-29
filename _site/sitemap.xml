@@ -13,6 +13,10 @@
 <lastmod>2023-12-22T00:00:00-05:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/Bayes-Theorem</loc>
+<lastmod>2023-12-29T00:00:00-05:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about/</loc>
 </url>
 <url>
@@ -38,5 +42,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/tag/history</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tag/probability</loc>
 </url>
 </urlset>

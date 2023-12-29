@@ -1,7 +1,7 @@
 /* Post + Page */
 .post,
 .page {
-  max-width: 780px;
+  max-width: 960px;
   margin: 0 auto;
   color: var(--text-color);
 
@@ -76,7 +76,7 @@
 .page__title {
   margin-bottom: 40px;
   font-size: 44px;
-  line-height: .90em;
+  line-height: 1em;
   text-transform: uppercase;
 
   @media only screen and (max-width: 1140px) {

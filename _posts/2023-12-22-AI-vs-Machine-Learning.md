@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "AI vs. Machine Learning - What's the Difference?"
+title: "AI vs. Machine Learning: What's the Difference?"
 description: "A brief writeup on the overlap and distinction between two of the buzziest topics of our time."
 date:   2023-12-22
-image:  '/images/ai-vs-ml.jpg'
+image:  '/images/ai_vs_ml.jpg'
 tags:
   - "ai"
   - "ml"
@@ -56,8 +56,6 @@ Thanks for reading!
 \- Jacob
 
 ## References
-1: [Wikipedia: John McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist))
-
-2: "The Little Thoughts of Thinking Machines", Psychology Today, December 1983, pp. 46–49.
-
-3: [Stanford University: Professor John McCarthy](http://jmc.stanford.edu/artificial-intelligence/what-is-ai/index.html)
+1. [Wikipedia: John McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist))
+2. "The Little Thoughts of Thinking Machines", Psychology Today, December 1983, pp. 46–49.
+3. [Stanford University: Professor John McCarthy](http://jmc.stanford.edu/artificial-intelligence/what-is-ai/index.html)

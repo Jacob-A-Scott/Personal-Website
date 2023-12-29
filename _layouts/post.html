@@ -18,7 +18,7 @@ layout: default
 <div class="container animate">
 
   <div class="post__info">
-    <h1 class="post__title">{{ page.title | escape }}</h1>
+    <h1 class="post__title">{{ page.title | markdownify }}</h1>
     <div class="post__meta">
       <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time> – <span class="post__minutes">{% assign words = page.content | number_of_words %} {% if words < 360 %} 1 min read {% else %} {{ words | divided_by:180 }} min read {% endif %}
       </span>
