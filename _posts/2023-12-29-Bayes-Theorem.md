@@ -44,6 +44,7 @@ Say that there is a rare disease, _Boogie Fever_ that 2% of the human population
 **Test Specificity (True Negative Rate):** 90%. The test will correctly show a negative result for 90% of people who _don't_ carry the gene.
 
 ![Rest]({{ site.baseurl }}/images/boogie_fever.png)
+*Shoutout to DALL-E for letting me get this creative.*
 
 Now, suppose that Bob walks into the _Midnight Special's Center for Boogie Fever Research_ and gets tested. Bob gets a positive result in the mail two weeks later, telling him that he's likely to carry the Boogie Fever gene. But just _how_ likely? What is the probability that Bob carries the gene, given his positive test result?
 
