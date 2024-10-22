@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Demystifying Algorithms: Bayes' Theorem and Naïve Bayes - Part I"
+title: "Demystifying Algorithms: Bayes' Theorem and Naïve Bayes"
 description: "Explaining one of the cornerstones of probability theory. A critical precursor to complex probabilistic models."
 date:   2023-12-29
 image:  '/images/bayes_theorem.jpg'
@@ -8,6 +8,9 @@ tags:
   - "ai"
   - "probability"
 ---
+
+### Update October 2024
+I have been very, very busy between work, finishing my master's degree, and home life. I intended for this "Demystifying Algorithms" series to continue (particularly with a follow-up piece on Naïve Bayes classifiers), but alas, it's DOA. I'll have plenty to share in the future, but other priorities have obviously taken precedence!
 
 ## Get the Fundamentals Down
 ### Short-Term Plan
