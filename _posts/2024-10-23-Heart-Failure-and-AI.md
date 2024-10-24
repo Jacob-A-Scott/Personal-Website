@@ -6,8 +6,7 @@ date:   2024-10-23
 image:  '/images/bedside_monitor.jpg'
 tags:
   - "ai"
-  - "machine learning"
-  - "deep learning"
+  - "ml"
   - "transformers"
 ---
 
@@ -45,5 +44,5 @@ Thanks for reading. If all goes well, I will have a research paper to share on t
 
 ## References
 <ol>
-  <li id="ref1">[MIMIC-IV, a freely accessible electronic health record dataset.](https://rdcu.be/dXU5M)<a href="#citation1"> [Back to text]</a></li>
+  <li id="ref1">Johnson, A.E.W., Bulgarelli, L., Shen, L. et al. MIMIC-IV, a freely accessible electronic health record dataset. Sci Data 10, 1 (2023). https://doi.org/10.1038/s41597-022-01899-x (https://rdcu.be/dXU5M)<a href="#citation1"> [Back to text]</a></li>
 </ol>
