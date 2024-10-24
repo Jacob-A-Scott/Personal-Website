@@ -13,7 +13,7 @@ tags:
 ## Setting the Stage
 In recent years, the healthcare landscape has been revolutionized by advancements in data-driven insights. From diagnostics to patient monitoring, AI domains such as data mining, machine learning, and deep learning have started to shape a new frontier for predicting health outcomes. To fulfill my capstone requirement for my master’s degree in Data Science this semester, I chose to take on an independent research project and explore this intersection of technology and healthcare, with a focus on leveraging machine learning to improve outcomes for patients with heart failure. This post will give you a peek into the project—what I’m aiming to do, why it's significant, and how I’m tackling it.
 
-Heart failure is a complex, chronic condition, and its management is challenging for healthcare providers and patients alike. The need for hospitalization, often sudden and unpredictable, takes a toll on both the healthcare system and patient quality of life. My capstone project aims to build a predictive model for forecasting 30d hospital readmissions for heart failure ICU patients using the MIMIC-IV<sup id="citation1"><a href="#ref1"> [1]</a></sup> database. By accurately predicting these outcomes, the intent is to empower healthcare professionals with early warning signals that could guide preventive care measures, ultimately improving patient outcomes. I’m under no illusion that this work could be utilized immediately in practice, but contributing to this area by exploring my intended multi-modal approach is my objective for this research.
+Heart failure is a complex, chronic condition, and its management is challenging for healthcare providers and patients alike. The need for hospitalization, often sudden and unpredictable, takes a toll on both the healthcare system and patient quality of life. My capstone project aims to build a predictive model for forecasting 30d hospital readmissions for heart failure ICU patients using the MIMIC-IV<sup> \[1\]</sup> database. By accurately predicting these outcomes, the intent is to empower healthcare professionals with early warning signals that could guide preventive care measures, ultimately improving patient outcomes. I’m under no illusion that this work could be utilized immediately in practice, but contributing to this area by exploring my intended multi-modal approach is my objective for this research.
 
 ## Multi-Modal Data for a Multi-Faceted Problem
 At its core, this project uses multiple types of data to create a holistic picture of patient health. The dataset has been carefully segmented into three primary components: 
@@ -43,6 +43,4 @@ Thanks for reading. If all goes well, I will have a research paper to share on t
 \- Jacob
 
 ## References
-<ol>
-  <li id="ref1">Johnson, A.E.W., Bulgarelli, L., Shen, L. et al. MIMIC-IV, a freely accessible electronic health record dataset. Sci Data 10, 1 (2023). https://doi.org/10.1038/s41597-022-01899-x (https://rdcu.be/dXU5M)<a href="#citation1"> [Back to text]</a></li>
-</ol>
+1. [MIMIC-IV, a freely accessible electronic health record dataset.](https://rdcu.be/dXU5M)
