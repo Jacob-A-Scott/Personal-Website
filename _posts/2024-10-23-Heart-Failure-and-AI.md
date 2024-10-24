@@ -34,7 +34,7 @@ Transformers are powerful in dealing with contextual dependencies—in this case
 ## Impact and Future Direction
 The goal of this project extends beyond the creation of a predictive model and fulfilling a degree requirement. I want to contribute something small, yet meaningful to the body of research surrounding chronic care management.
 
-Imagine a clinician receiving an alert that a specific heart failure patient is at a heightened risk of readmission in the next 30 days. Such a warning could prompt a change in post-discharge care—maybe increased monitoring, medication adjustment,or an extra follow-up appointment. It’s a glimpse into a future of personalized, data-driven healthcare.
+Imagine a clinician receiving an alert that a specific heart failure patient is at a heightened risk of readmission in the next 30 days. Such a warning could prompt a change in post-discharge care—maybe increased monitoring, medication adjustment, or an extra follow-up appointment. It’s a glimpse into a future of personalized, data-driven healthcare.
 
 This project builds on an existing corpus of research using MIMIC data, even combining it with deep learning and heart failure objectives. My hope is that I learn as much as I can from this research and create something that can be iterated on in the future, perhaps integrating even more varied data sources or refining the model to ensure it is applicable, ethical, and secure enough for real-world healthcare settings.
 
