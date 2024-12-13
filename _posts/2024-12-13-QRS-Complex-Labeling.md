@@ -18,7 +18,7 @@ This tool allows you to interactively label Q Onset, R Peak, and S Offset points
 <style>
     .responsive-iframe {
         position: relative;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        padding-bottom: 100%;
         padding-top: 25px;
         height: 0;
     }
