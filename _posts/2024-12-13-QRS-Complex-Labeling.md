@@ -3,7 +3,7 @@ layout: post
 title:  "QRS Complex Labeling in Multi-Channel ECG Data Using Plotly Dash"
 description: "No description yet."
 date:   2024-12-13 
-image:  "/images/intro.jpg"
+image:  "/images/plotly_app_header.jpg"
 tags:
   - "Labeling"
   - "Visualization"
