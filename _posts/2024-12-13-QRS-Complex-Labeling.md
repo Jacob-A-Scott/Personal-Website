@@ -33,5 +33,5 @@ This tool allows you to interactively label Q Onset, R Peak, and S Offset points
 </style>
 
 <div class="responsive-iframe">
-    <iframe src="https://dashboard.heroku.com/apps/dash-app-beats" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://dash-app-beats-2a7dfbd0b586.herokuapp.com/" frameborder="0" allowfullscreen></iframe>
 </div>
